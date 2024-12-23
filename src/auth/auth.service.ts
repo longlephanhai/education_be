@@ -87,8 +87,8 @@ export class AuthService {
       const payload = { user: user.email, sub: newUser?._id, role: user.role ? user.role : null };
       const accessToken = this.jwtService.sign(payload)
       user.accessToken = accessToken;
-      // return res.redirect(`http://localhost:3000/auth/login?token=${accessToken}`);
-      return res.redirect(`${this.configService.get('FRONT_END_URL')}/auth/login?token=${accessToken}`);
+      return res.redirect(`https://education-be-tuv3.onrender.com/auth/login?token=${accessToken}`);
+      // return res.redirect(`${this.configService.get('FRONT_END_URL')}/auth/login?token=${accessToken}`);
     }
   }
 }
