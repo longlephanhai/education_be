@@ -23,7 +23,7 @@ export class ExamService {
   }
 
   async findOne(id: string) {
-    await this.examModel.findById(id);
+    return await this.examModel.findById(id);
   }
 
   update(id: number, updateExamDto: UpdateExamDto) {

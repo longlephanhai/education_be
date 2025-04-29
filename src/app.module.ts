@@ -24,6 +24,7 @@ import { ExamModule } from './exam/exam.module';
 import { QuestionModule } from './question/question.module';
 import { DocModule } from './doc/doc.module';
 import { AboutusModule } from './aboutus/aboutus.module';
+import { ScoreModule } from './score/score.module';
 
 
 
@@ -81,7 +82,8 @@ import { AboutusModule } from './aboutus/aboutus.module';
     ExamModule,
     QuestionModule,
     DocModule,
-    AboutusModule
+    AboutusModule,
+    ScoreModule
   ],
   controllers: [AppController],
   providers: [

@@ -21,7 +21,7 @@ export class ChatGptService {
   }
 
   private conversationHistory: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
-    { role: 'system', content: 'You are an English speaking coach. Ask questions and correct the user\'s responses.' },
+    { role: 'system', content: 'You are an English speaking coach. Ask questions even if the feedback sent to you is empty and correct the user\'s answers.' },
   ];
   // Lấy phản hồi từ OpenAI GPT
   async getChatGptResponse(text: string): Promise<string> {
@@ -31,7 +31,7 @@ export class ChatGptService {
       const response = await this.openai.chat.completions.create({
         model: 'gpt-4',
         messages: this.conversationHistory,
-        max_tokens: 50,
+        max_tokens: 30,
       });
 
       const message = response.choices && response.choices[0]?.message?.content;

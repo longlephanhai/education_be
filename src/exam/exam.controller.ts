@@ -5,6 +5,7 @@ import { CreateExamDto } from './dto/create-exam.dto';
 import { UpdateExamDto } from './dto/update-exam.dto';
 import { AudioFile } from 'src/decorator/audio-file.decorator';
 import { ResponseMessage } from 'src/decorator/customize.decorator';
+import mongoose from 'mongoose';
 
 @Controller('exam')
 export class ExamController {
@@ -28,6 +29,7 @@ export class ExamController {
   findOne(@Param('id') id: string) {
     return this.examService.findOne(id);
   }
+
   
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateExamDto: UpdateExamDto) {
