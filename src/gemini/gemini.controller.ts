@@ -20,7 +20,7 @@ export class GeminiController {
   @ResponseMessage("Prompt response")
   @Get('title')
   async getTitleResponse() {
-    const promptForTitle = `Create a random English writing practice topic for TOEIC preparation. Provide only the title.`;
+    const promptForTitle = `Create a random, simple, and clear English writing topic for TOEIC learners. The topic should be **different each time**. Just give the title only. Keep it suitable for beginner level.`;
     const title = await this.geminiService.getTitileResponse(promptForTitle);
 
     const promptForHints = `Provide 2-3 short writing hints (no more than 20 words each) for the topic: "${title}".`;

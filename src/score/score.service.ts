@@ -16,7 +16,6 @@ export class ScoreService {
     })
     return newScore;
   }
-
   findAll() {
     return `This action returns all score`;
   }
