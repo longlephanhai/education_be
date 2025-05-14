@@ -42,6 +42,6 @@ export class FavouriteService {
     if (!isExist) {
       throw new BadRequestException('Không tìm thấy từ vựng trong danh sách');
     }
-    await this.favouriteModel.deleteOne({ vocbId: id, userId: user.userId });
+    return await this.favouriteModel.deleteOne({ vocbId: id, userId: user.userId });
   }
 }
