@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateQuestionpartoneDto } from './dto/create-questionpartone.dto';
 import { UpdateQuestionpartoneDto } from './dto/update-questionpartone.dto';
 import { InjectModel } from '@nestjs/mongoose';
@@ -13,8 +13,21 @@ export class QuestionpartoneService {
     private questionModal: Model<QuestionPartOne>,
     private cloudinary: CloudinaryService,
   ) { }
-  create(createQuestionpartoneDto: CreateQuestionpartoneDto) {
-    return 'This action adds a new questionpartone';
+
+  async uploadImageToCloudinary(file: Express.Multer.File) {
+    if (!file) {
+      throw new BadRequestException('No file provided.');
+    }
+    return await this.cloudinary.uploadImage(file).catch(() => {
+      throw new BadRequestException('Invalid file type.');
+    });
+  }
+
+  async create(createQuestionpartoneDto: CreateQuestionpartoneDto, img: Express.Multer.File) {
+    let imageUrl = null;
+    imageUrl = await this.uploadImageToCloudinary(img);
+
+    return await this.questionModal.create({ ...createQuestionpartoneDto, imageUrl: imageUrl?.secure_url });
   }
 
   findAll() {
