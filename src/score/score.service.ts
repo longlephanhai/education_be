@@ -17,7 +17,7 @@ export class ScoreService {
     return newScore;
   }
   findAll(user: any) {
-    return this.scoreModel.find({ userId: user.userId, isDeleted: false })
+    return this.scoreModel.find({ userId: user.userId, isDeleted: false }).populate('examId')
   }
 
   findOne(id: number) {
