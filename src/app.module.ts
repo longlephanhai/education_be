@@ -25,6 +25,7 @@ import { QuestionModule } from './question/question.module';
 import { DocModule } from './doc/doc.module';
 import { AboutusModule } from './aboutus/aboutus.module';
 import { ScoreModule } from './score/score.module';
+import { PartoneModule } from './partone/partone.module';
 
 
 
@@ -83,7 +84,8 @@ import { ScoreModule } from './score/score.module';
     QuestionModule,
     DocModule,
     AboutusModule,
-    ScoreModule
+    ScoreModule,
+    PartoneModule
   ],
   controllers: [AppController],
   providers: [
