@@ -17,8 +17,8 @@ export class PartoneService {
     return newPartone
   }
 
-  findAll() {
-    return `This action returns all partone`;
+  async findAll() {
+    return await this.partOneModel.find()
   }
 
   findOne(id: number) {

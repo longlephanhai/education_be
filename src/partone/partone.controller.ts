@@ -12,10 +12,11 @@ export class PartoneController {
   @AudioFile()
   @ResponseMessage("Tạo bài thi thành công")
   create(@Body() createPartoneDto: CreatePartoneDto, @UploadedFile() file: Express.Multer.File) {
-    return this.partoneService.create(createPartoneDto,file);
+    return this.partoneService.create(createPartoneDto, file);
   }
 
   @Get()
+  @ResponseMessage("Lấy tiêu đề bài thi thành công")
   findAll() {
     return this.partoneService.findAll();
   }
