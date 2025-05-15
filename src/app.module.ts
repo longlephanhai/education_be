@@ -28,6 +28,7 @@ import { ScoreModule } from './score/score.module';
 import { PartoneModule } from './partone/partone.module';
 import { QuestionpartoneModule } from './questionpartone/questionpartone.module';
 import { ParttwoModule } from './parttwo/parttwo.module';
+import { QuestionparttwoModule } from './questionparttwo/questionparttwo.module';
 
 
 
@@ -89,7 +90,8 @@ import { ParttwoModule } from './parttwo/parttwo.module';
     ScoreModule,
     PartoneModule,
     QuestionpartoneModule,
-    ParttwoModule
+    ParttwoModule,
+    QuestionparttwoModule
   ],
   controllers: [AppController],
   providers: [
