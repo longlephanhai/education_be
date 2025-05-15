@@ -1,15 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UploadedFile } from '@nestjs/common';
 import { PartthreeService } from './partthree.service';
 import { CreatePartthreeDto } from './dto/create-partthree.dto';
 import { UpdatePartthreeDto } from './dto/update-partthree.dto';
+import { AudioFile } from 'src/decorator/audio-file.decorator';
+import { ResponseMessage } from 'src/decorator/customize.decorator';
 
 @Controller('partthree')
 export class PartthreeController {
-  constructor(private readonly partthreeService: PartthreeService) {}
+  constructor(private readonly partthreeService: PartthreeService) { }
 
   @Post()
-  create(@Body() createPartthreeDto: CreatePartthreeDto) {
-    return this.partthreeService.create(createPartthreeDto);
+  @AudioFile()
+  @ResponseMessage("Tạo bài thi thành công")
+  create(@Body() createPartthreeDto: CreatePartthreeDto, @UploadedFile() file: Express.Multer.File) {
+    return this.partthreeService.create(createPartthreeDto, file);
   }
 
   @Get()
