@@ -29,6 +29,7 @@ import { PartoneModule } from './partone/partone.module';
 import { QuestionpartoneModule } from './questionpartone/questionpartone.module';
 import { ParttwoModule } from './parttwo/parttwo.module';
 import { QuestionparttwoModule } from './questionparttwo/questionparttwo.module';
+import { PartthreeModule } from './partthree/partthree.module';
 
 
 
@@ -91,7 +92,8 @@ import { QuestionparttwoModule } from './questionparttwo/questionparttwo.module'
     PartoneModule,
     QuestionpartoneModule,
     ParttwoModule,
-    QuestionparttwoModule
+    QuestionparttwoModule,
+    PartthreeModule
   ],
   controllers: [AppController],
   providers: [
