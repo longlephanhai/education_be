@@ -1,9 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePartthreeDto } from './dto/create-partthree.dto';
 import { UpdatePartthreeDto } from './dto/update-partthree.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { PartThree } from './schema/partthree.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class PartthreeService {
+  constructor(@InjectModel(PartThree.name) private partOneModel: Model<PartThree>) { }
+  
   create(createPartthreeDto: CreatePartthreeDto) {
     return 'This action adds a new partthree';
   }
