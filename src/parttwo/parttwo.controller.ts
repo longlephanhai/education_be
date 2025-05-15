@@ -17,6 +17,7 @@ export class ParttwoController {
   }
 
   @Get()
+  @ResponseMessage("Lấy tiêu đề bài thi thành công")
   findAll() {
     return this.parttwoService.findAll();
   }
