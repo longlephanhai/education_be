@@ -16,8 +16,8 @@ export class PartfiveService {
     return await this.partFiveModel.create({ ...createPartfiveDto });
   }
 
-  findAll() {
-    return `This action returns all partfive`;
+  async findAll() {
+    return await this.partFiveModel.find()
   }
 
   findOne(id: number) {

@@ -10,13 +10,13 @@ export class PartfiveController {
   constructor(private readonly partfiveService: PartfiveService) { }
 
   @Post()
-  @AudioFile()
   @ResponseMessage("Tạo bài thi thành công")
   create(@Body() createPartfiveDto: CreatePartfiveDto) {
     return this.partfiveService.create(createPartfiveDto);
   }
 
   @Get()
+  @ResponseMessage("Lấy danh sách bài thi thành công")
   findAll() {
     return this.partfiveService.findAll();
   }
