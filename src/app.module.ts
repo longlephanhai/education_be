@@ -33,6 +33,7 @@ import { PartthreeModule } from './partthree/partthree.module';
 import { PartfourModule } from './partfour/partfour.module';
 import { QuestionpartfourModule } from './questionpartfour/questionpartfour.module';
 import { PartfiveModule } from './partfive/partfive.module';
+import { QuestionpartthreeModule } from './questionpartthree/questionpartthree.module';
 
 
 
@@ -97,6 +98,7 @@ import { PartfiveModule } from './partfive/partfive.module';
     ParttwoModule,
     QuestionparttwoModule,
     PartthreeModule,
+    QuestionpartthreeModule,
     PartfourModule,
     QuestionpartfourModule,
     PartfiveModule,
