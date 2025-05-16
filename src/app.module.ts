@@ -30,6 +30,9 @@ import { QuestionpartoneModule } from './questionpartone/questionpartone.module'
 import { ParttwoModule } from './parttwo/parttwo.module';
 import { QuestionparttwoModule } from './questionparttwo/questionparttwo.module';
 import { PartthreeModule } from './partthree/partthree.module';
+import { PartfourModule } from './partfour/partfour.module';
+import { QuestionpartfourModule } from './questionpartfour/questionpartfour.module';
+import { PartfiveModule } from './partfive/partfive.module';
 
 
 
@@ -93,7 +96,10 @@ import { PartthreeModule } from './partthree/partthree.module';
     QuestionpartoneModule,
     ParttwoModule,
     QuestionparttwoModule,
-    PartthreeModule
+    PartthreeModule,
+    PartfourModule,
+    QuestionpartfourModule,
+    PartfiveModule,
   ],
   controllers: [AppController],
   providers: [
