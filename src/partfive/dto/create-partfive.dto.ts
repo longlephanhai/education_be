@@ -6,7 +6,4 @@ export class CreatePartfiveDto {
 
     @IsNotEmpty({ message: 'Miêu tả không được để trống' })
     description: string;
-
-    @IsOptional()
-    audioUrl: string;
 }

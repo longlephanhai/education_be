@@ -1,13 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UploadedFile } from '@nestjs/common';
 import { PartfiveService } from './partfive.service';
 import { CreatePartfiveDto } from './dto/create-partfive.dto';
 import { UpdatePartfiveDto } from './dto/update-partfive.dto';
+import { AudioFile } from 'src/decorator/audio-file.decorator';
+import { ResponseMessage } from 'src/decorator/customize.decorator';
 
 @Controller('partfive')
 export class PartfiveController {
-  constructor(private readonly partfiveService: PartfiveService) {}
+  constructor(private readonly partfiveService: PartfiveService) { }
 
   @Post()
+  @AudioFile()
+  @ResponseMessage("Tạo bài thi thành công")
   create(@Body() createPartfiveDto: CreatePartfiveDto) {
     return this.partfiveService.create(createPartfiveDto);
   }

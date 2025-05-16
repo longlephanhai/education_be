@@ -12,9 +12,6 @@ export class PartFive {
     @Prop({ required: true })
     description: string;
 
-    @Prop({ required: true })
-    audioUrl: string;
-
 
     @Prop({ type: Object })
     createdBy: {
