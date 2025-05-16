@@ -46,12 +46,12 @@ export class UsersService {
     delete filter.current;
     delete filter.pageSize;
     let offset = (+currentPage - 1) * (+limit);
-    let defaultLimit = +limit ? +limit : 10;
+    let defaultLimit = +limit ? +limit : 5;
     const totalItems = (await this.userModel.find(filter)).length;
     const totalPages = Math.ceil(totalItems / defaultLimit);
     const result = await this.userModel.find({
       ...filter,
-      role: { $ne: null },
+      // role: { $ne: null },
       isDeleted: false
     })
       .skip(offset)

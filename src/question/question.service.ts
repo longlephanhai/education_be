@@ -9,8 +9,9 @@ import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 
 @Injectable()
 export class QuestionService {
-  constructor(@InjectModel(Question.name)
-  private questionModal: Model<Question>,
+  constructor(
+    @InjectModel(Question.name)
+    private questionModal: Model<Question>,
     private cloudinary: CloudinaryService,
   ) { }
 
