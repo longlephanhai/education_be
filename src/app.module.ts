@@ -38,6 +38,7 @@ import { QuestionpartfiveModule } from './questionpartfive/questionpartfive.modu
 import { PartsixModule } from './partsix/partsix.module';
 import { QuestionpartsixModule } from './questionpartsix/questionpartsix.module';
 import { PartsevenModule } from './partseven/partseven.module';
+import { QuestionpartsevenModule } from './questionpartseven/questionpartseven.module';
 
 
 
@@ -110,6 +111,7 @@ import { PartsevenModule } from './partseven/partseven.module';
     PartsixModule,
     QuestionpartsixModule,
     PartsevenModule,
+    QuestionpartsevenModule,
   ],
   controllers: [AppController],
   providers: [
