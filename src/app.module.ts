@@ -35,6 +35,7 @@ import { QuestionpartfourModule } from './questionpartfour/questionpartfour.modu
 import { PartfiveModule } from './partfive/partfive.module';
 import { QuestionpartthreeModule } from './questionpartthree/questionpartthree.module';
 import { QuestionpartfiveModule } from './questionpartfive/questionpartfive.module';
+import { PartsixModule } from './partsix/partsix.module';
 
 
 
@@ -104,6 +105,7 @@ import { QuestionpartfiveModule } from './questionpartfive/questionpartfive.modu
     QuestionpartfourModule,
     PartfiveModule,
     QuestionpartfiveModule,
+    PartsixModule,
   ],
   controllers: [AppController],
   providers: [
