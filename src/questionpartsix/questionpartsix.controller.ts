@@ -1,15 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { QuestionpartsixService } from './questionpartsix.service';
 import { CreateQuestionpartsixDto } from './dto/create-questionpartsix.dto';
 import { UpdateQuestionpartsixDto } from './dto/update-questionpartsix.dto';
+import { ResponseMessage } from 'src/decorator/customize.decorator';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('questionpartsix')
 export class QuestionpartsixController {
-  constructor(private readonly questionpartsixService: QuestionpartsixService) {}
+  constructor(private readonly questionpartsixService: QuestionpartsixService) { }
 
   @Post()
-  create(@Body() createQuestionpartsixDto: CreateQuestionpartsixDto) {
-    return this.questionpartsixService.create(createQuestionpartsixDto);
+  @ResponseMessage("Tạo mới câu hỏi thành công")
+  @UseInterceptors(FileInterceptor('imageUrl'))
+  create(@Body() createQuestionpartsixDto: CreateQuestionpartsixDto, @UploadedFile() img: Express.Multer.File) {
+    return this.questionpartsixService.create(createQuestionpartsixDto,img);
   }
 
   @Get()
