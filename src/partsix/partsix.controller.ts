@@ -15,6 +15,7 @@ export class PartsixController {
   }
 
   @Get()
+  @ResponseMessage("Lấy danh sách bài thi thành công")
   findAll() {
     return this.partsixService.findAll();
   }
