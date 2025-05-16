@@ -17,6 +17,7 @@ export class PartthreeController {
   }
 
   @Get()
+  @ResponseMessage("Lấy tiêu đề bài thi thành công")
   findAll() {
     return this.partthreeService.findAll();
   }
@@ -36,3 +37,4 @@ export class PartthreeController {
     return this.partthreeService.remove(+id);
   }
 }
+

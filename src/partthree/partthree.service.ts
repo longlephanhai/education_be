@@ -17,8 +17,8 @@ export class PartthreeService {
     return await this.partThreeModel.create({ ...createPartthreeDto, audioUrl: file.path });
   }
 
-  findAll() {
-    return `This action returns all partthree`;
+  async findAll() {
+    return await this.partThreeModel.find()
   }
 
   findOne(id: number) {
