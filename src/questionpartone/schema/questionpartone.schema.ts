@@ -2,8 +2,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import slug from 'mongoose-slug-updater';
-import { PartOne } from 'src/partone/schema/partone.schema';
-
 mongoose.plugin(slug);
 
 export type QuestionPartOneDocument = HydratedDocument<QuestionPartOne>;

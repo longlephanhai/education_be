@@ -2,7 +2,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import slug from 'mongoose-slug-updater';
-import { PartTwo } from 'src/partTwo/schema/partTwo.schema';
 
 mongoose.plugin(slug);
 
