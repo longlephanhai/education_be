@@ -7,17 +7,17 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class PartsixService {
-  constructor(@InjectModel(PartSix.name) private partFiveModel: Model<PartSix>) { }
+  constructor(@InjectModel(PartSix.name) private partSixModel: Model<PartSix>) { }
   async create(createPartsixDto: CreatePartsixDto) {
-    const isExist = await this.partFiveModel.findOne({ name: createPartsixDto.name });
+    const isExist = await this.partSixModel.findOne({ name: createPartsixDto.name });
     if (isExist) {
       throw new BadRequestException('Tiêu đề này đã tồn tại');
     }
-    return await this.partFiveModel.create({ ...createPartsixDto });
+    return await this.partSixModel.create({ ...createPartsixDto });
   }
 
   async findAll() {
-    return await this.partFiveModel.find()
+    return await this.partSixModel.find()
   }
 
   findOne(id: number) {

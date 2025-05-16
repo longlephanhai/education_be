@@ -2,12 +2,14 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { PartsevenService } from './partseven.service';
 import { CreatePartsevenDto } from './dto/create-partseven.dto';
 import { UpdatePartsevenDto } from './dto/update-partseven.dto';
+import { ResponseMessage } from 'src/decorator/customize.decorator';
 
 @Controller('partseven')
 export class PartsevenController {
-  constructor(private readonly partsevenService: PartsevenService) {}
+  constructor(private readonly partsevenService: PartsevenService) { }
 
   @Post()
+  @ResponseMessage("Tạo bài thi thành công")
   create(@Body() createPartsevenDto: CreatePartsevenDto) {
     return this.partsevenService.create(createPartsevenDto);
   }
