@@ -13,7 +13,7 @@ export class QuestionparttwoController {
   @ResponseMessage("Tạo mới câu hỏi thành công")
   @UseInterceptors(FileInterceptor('imageUrl'))
   create(@Body() createQuestionparttwoDto: CreateQuestionparttwoDto, @UploadedFile() img: Express.Multer.File) {
-    return this.questionparttwoService.create(createQuestionparttwoDto,img);
+    return this.questionparttwoService.create(createQuestionparttwoDto, img);
   }
 
   @Get()
@@ -22,8 +22,9 @@ export class QuestionparttwoController {
   }
 
   @Get(':id')
+  @ResponseMessage("Lấy danh sách câu hỏi theo id part two thành công")
   findOne(@Param('id') id: string) {
-    return this.questionparttwoService.findOne(+id);
+    return this.questionparttwoService.findOne(id);
   }
 
   @Patch(':id')

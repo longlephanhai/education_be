@@ -35,8 +35,10 @@ export class QuestionparttwoService {
     return `This action returns all questionparttwo`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} questionparttwo`;
+  async findOne(id: string) {
+    return await this.questionModal.find({
+      partTwoId: id,
+    })
   }
 
   update(id: number, updateQuestionparttwoDto: UpdateQuestionparttwoDto) {
