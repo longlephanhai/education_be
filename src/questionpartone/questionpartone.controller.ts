@@ -16,14 +16,16 @@ export class QuestionpartoneController {
     return this.questionpartoneService.create(createQuestionpartoneDto, img);
   }
 
+
   @Get()
   findAll() {
     return this.questionpartoneService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.questionpartoneService.findOne(+id);
+  @ResponseMessage("Lấy danh sách câu hỏi theo id part one thành công")
+  findOne(@Param('id') id: String) {
+    return this.questionpartoneService.findOne(id);
   }
 
   @Patch(':id')

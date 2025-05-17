@@ -3,7 +3,7 @@ import { CreateQuestionpartoneDto } from './dto/create-questionpartone.dto';
 import { UpdateQuestionpartoneDto } from './dto/update-questionpartone.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { QuestionPartOne } from './schema/questionpartone.schema';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 
 @Injectable()
@@ -34,8 +34,10 @@ export class QuestionpartoneService {
     return `This action returns all questionpartone`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} questionpartone`;
+  async findOne(id: String) {
+    return await this.questionModal.find({
+      partOneId: id,
+    })
   }
 
   update(id: number, updateQuestionpartoneDto: UpdateQuestionpartoneDto) {
