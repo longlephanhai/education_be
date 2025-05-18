@@ -22,8 +22,9 @@ export class QuestionpartsevenController {
   }
 
   @Get(':id')
+  @ResponseMessage("Lấy câu hỏi part 7 thành công")
   findOne(@Param('id') id: string) {
-    return this.questionpartsevenService.findOne(+id);
+    return this.questionpartsevenService.findOne(id);
   }
 
   @Patch(':id')
