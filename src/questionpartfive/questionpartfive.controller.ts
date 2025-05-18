@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors, UploadedFile, Res } from '@nestjs/common';
 import { QuestionpartfiveService } from './questionpartfive.service';
 import { CreateQuestionpartfiveDto } from './dto/create-questionpartfive.dto';
 import { UpdateQuestionpartfiveDto } from './dto/update-questionpartfive.dto';
@@ -22,8 +22,9 @@ export class QuestionpartfiveController {
   }
 
   @Get(':id')
+  @ResponseMessage("Lấy câu hỏi part 5 thành công")
   findOne(@Param('id') id: string) {
-    return this.questionpartfiveService.findOne(+id);
+    return this.questionpartfiveService.findOne(id);
   }
 
   @Patch(':id')
