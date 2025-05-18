@@ -23,8 +23,9 @@ export class QuestionpartthreeController {
   }
 
   @Get(':id')
+  @ResponseMessage("Lấy câu hỏi part 3 thành công")
   findOne(@Param('id') id: string) {
-    return this.questionpartthreeService.findOne(+id);
+    return this.questionpartthreeService.findOne(id);
   }
 
   @Patch(':id')
