@@ -21,7 +21,7 @@ export class ChatGptService {
   }
 
   private conversationHistory: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
-    { role: 'system', content: 'You are an English speaking coach. Ask questions even if the feedback sent to you is empty and correct the user\'s answers.' },
+    { role: 'system', content: 'You are an English coach. Keep asking easy questions, even if the user says nothing. Correct their answers.' },
   ];
   // Lấy phản hồi từ OpenAI GPT
   async getChatGptResponse(text: string): Promise<string> {
