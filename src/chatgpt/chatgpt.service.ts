@@ -21,7 +21,11 @@ export class ChatGptService {
   }
 
   private conversationHistory: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
-    { role: 'system', content: 'You are an English coach. Keep asking easy questions, even if the user says nothing. Correct their answers.' },
+    {
+      role: 'system',
+      content: 'You are an English coach. Start by asking very simple questions (like name, age, hobbies). Gradually increase the difficulty of the questions based on the user\'s answers. Always keep the conversation going, even if the user is quiet. Correct their grammar and vocabulary gently when needed.'
+    }
+
   ];
   // Lấy phản hồi từ OpenAI GPT
   async getChatGptResponse(text: string): Promise<string> {
